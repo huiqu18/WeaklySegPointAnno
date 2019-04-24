@@ -61,7 +61,7 @@ class Options:
             parser.add_argument('--epochs', type=int, default=self.train['train_epochs'], help='number of epochs to train')
             parser.add_argument('--lr', type=float, default=self.train['lr'], help='learning rate')
             parser.add_argument('--log-interval', type=int, default=self.train['log_interval'], help='how many batches to wait before logging training status')
-            parser.add_argument('--gpus', type=list, default=self.train['gpus'], help='GPUs for training')
+            parser.add_argument('--gpus', type=int, nargs='+', default=self.train['gpus'], help='GPUs for training')
             parser.add_argument('--data-dir', type=str, default=self.train['data_dir'], help='directory of training data')
             parser.add_argument('--save-dir', type=str, default=self.train['save_dir'], help='directory to save training results')
             args = parser.parse_args()
